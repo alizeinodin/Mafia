@@ -3,6 +3,7 @@
 class Mafia {
 
     private $array = []; // array of character's of mafia
+    private $players = []; // name of players of mafia
 
     /**
      * @param array $arr
