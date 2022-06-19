@@ -7,7 +7,7 @@ class Mafia {
     private $players = []; // array of players
     private $result = []; // result of program
 
-    public function __construct(player $player)
+    public function __construct(Player $player)
     {
         $this->playerClass = $player;
         $this->players = $this->playerClass->getPlayers();
