@@ -2,7 +2,7 @@
 
 class Player // singleton for player class
 {
-    protected $players = [];
+    private $players = [];
 
     /**
      * add players to player array
