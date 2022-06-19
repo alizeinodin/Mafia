@@ -3,8 +3,15 @@
 class Mafia {
 
     private $characters = []; // array of character's of mafia
-    private $players = []; // name of players of mafia
+    private $playerClass; // player class
+    private $players = []; // array of players
     private $result = []; // result of program
+
+    public function __construct(player $player)
+    {
+        $this->playerClass = $player;
+        $this->players = $this->playerClass->getPlayers();
+    }
 
     /**
      * @param array $arr

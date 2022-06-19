@@ -1,6 +1,6 @@
 <?php
 
-class player // singleton method for player class
+class Player // singleton for player class
 {
     private static $obg; // object of this class
 
@@ -9,9 +9,9 @@ class player // singleton method for player class
     /**
      * singleton for this class
      *
-     * @return player
+     * @return Player
      */
-    public static function singleton(): player
+    public static function singleton(): Player
     {
         isset(self::$obg) ?: self::$obg = new player();
         return self::$obg;
