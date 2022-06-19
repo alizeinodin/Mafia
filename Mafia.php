@@ -2,15 +2,21 @@
 
 class Mafia {
 
-    private $roles = []; // array of character's of mafia
+
     private $playerClass; // player class
+    private $roleClass; // role class
+
+    private $roles = []; // array of character's of mafia
     private $players = []; // array of players
     private $result = []; // result of program
 
-    public function __construct(Player $player)
+    public function __construct(Player $player, Role $role)
     {
         $this->playerClass = $player;
         $this->players = $this->playerClass->getPlayers();
+
+        $this->roleClass = $role;
+        $this->roles = $this->roleClass->getRoles();
     }
 
     /**
