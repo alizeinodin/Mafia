@@ -5,6 +5,16 @@ class Role
     private $roles = []; // array of role's
 
     /**
+     * return roles
+     *
+     * @return array
+     */
+    public function getRoles(): array
+    {
+        return $this->roles;
+    }
+
+    /**
      * @param array $arr
      *
      * @return array
