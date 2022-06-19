@@ -61,5 +61,15 @@ class Mafia {
         return $this->players = $arr;
     }
 
+    /**
+     * number of characters must equal to number of players
+     *
+     * @return bool
+     */
+    public function validation(): bool
+    {
+        return count($this->characters) === count($this->players);
+    }
+
 
 }
