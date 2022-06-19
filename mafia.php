@@ -38,11 +38,11 @@ class Mafia {
     }
 
     /**
-     * @return mixed
+     * @return array
      *
-     * select a random char's for player
+     * select a random role for player's
      */
-    public function select()
+    public function select(): array
     {
         $keys = []; // selected keys
         $i = 0;
