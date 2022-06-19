@@ -2,7 +2,7 @@
 
 class Mafia {
 
-    private $characters = []; // array of character's of mafia
+    private $roles = []; // array of character's of mafia
     private $playerClass; // player class
     private $players = []; // array of players
     private $result = []; // result of program
@@ -21,7 +21,7 @@ class Mafia {
      */
     public function addChars(array $arr): array
     {
-        return $this->characters = $arr;
+        return $this->roles = $arr;
     }
 
     /**
@@ -31,7 +31,7 @@ class Mafia {
      */
     public function delete($int)
     {
-        unset($this->characters[$int]);
+        unset($this->roles[$int]);
     }
 
     /**
@@ -41,7 +41,7 @@ class Mafia {
      */
     public function size(): int
     {
-        return count($this->characters);
+        return count($this->roles);
     }
 
     /**
@@ -53,13 +53,13 @@ class Mafia {
     {
         $keys = []; // selected keys
         $i = 0;
-        while (count($this->characters) > 0) // until a character is available
+        while (count($this->roles) > 0) // until a character is available
         {
-            $item = array_rand($this->characters);
+            $item = array_rand($this->roles);
             if (!in_array($item, $keys))
             {
-                $this->result[$this->players[$i++]] = $this->characters[$item]; // player => role
-                unset($this->characters[$item]);
+                $this->result[$this->players[$i++]] = $this->roles[$item]; // player => role
+                unset($this->roles[$item]);
             }
             $keys[] = $item;
         }
@@ -67,12 +67,12 @@ class Mafia {
     }
 
     /**
-     * number of characters must equal to number of players
+     * number of roles must equal to number of players
      *
      * @return bool
      */
     public function validation(): bool
     {
-        return count($this->characters) === count($this->players);
+        return count($this->roles) === count($this->players);
     }
 }
