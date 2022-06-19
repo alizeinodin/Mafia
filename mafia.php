@@ -27,6 +27,16 @@ class Mafia {
     }
 
     /**
+     * @return int
+     *
+     * return size of array
+     */
+    public function size(): int
+    {
+        return count($this->characters);
+    }
+
+    /**
      * @return mixed
      *
      * select a random char's for player
@@ -40,13 +50,15 @@ class Mafia {
     }
 
     /**
-     * @return int
      *
-     * return size of array
+     * @param array $arr
+     *
+     * @return array
+     * add players to player array
      */
-    public function size(): int
+    public function addPlayer(array $arr): array
     {
-        return count($this->characters);
+        return $this->players = $arr;
     }
 
 
