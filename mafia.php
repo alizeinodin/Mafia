@@ -60,18 +60,6 @@ class Mafia {
     }
 
     /**
-     * add players to player array
-     *
-     * @param array $arr
-     *
-     * @return array
-     */
-    public function addPlayer(array $arr): array
-    {
-        return $this->players = $arr;
-    }
-
-    /**
      * number of characters must equal to number of players
      *
      * @return bool
