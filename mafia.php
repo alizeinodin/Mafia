@@ -4,6 +4,7 @@ class Mafia {
 
     private $characters = []; // array of character's of mafia
     private $players = []; // name of players of mafia
+    private $result = []; // result of program
 
     /**
      * @param array $arr
@@ -43,10 +44,19 @@ class Mafia {
      */
     public function select()
     {
-        $int = mt_rand(0, count($this->characters) - 1);
-        $instance = $this->characters[$int];
-        $this->delete($int);
-        return $instance;
+        $keys = []; // selected keys
+        $i = 0;
+        while (count($this->characters) > 0) // until a character is available
+        {
+            $item = array_rand($this->characters);
+            if (!in_array($item, $keys))
+            {
+                $this->result[$this->players[$i++]] = $this->characters[$item]; // player => role
+                unset($this->characters[$item]);
+            }
+            $keys[] = $item;
+        }
+        return $this->result;
     }
 
     /**
@@ -70,6 +80,4 @@ class Mafia {
     {
         return count($this->characters) === count($this->players);
     }
-
-
 }
