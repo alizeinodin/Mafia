@@ -17,6 +17,11 @@ class Mafia {
 
         $this->roleClass = $role;
         $this->roles = $this->roleClass->getRoles();
+
+        if (!$this->validation())
+        {
+            exit("ERROR");
+        }
     }
 
     /**
