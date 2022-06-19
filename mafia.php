@@ -2,7 +2,7 @@
 
 class Mafia {
 
-    private $array = []; // array of character's of mafia
+    private $characters = []; // array of character's of mafia
     private $players = []; // name of players of mafia
 
     /**
@@ -13,7 +13,7 @@ class Mafia {
      */
     public function addChars(array $arr): array
     {
-        return $this->array = $arr;
+        return $this->characters = $arr;
     }
 
     /**
@@ -23,7 +23,7 @@ class Mafia {
      */
     public function delete($int)
     {
-        unset($this->array[$int]);
+        unset($this->characters[$int]);
     }
 
     /**
@@ -33,8 +33,8 @@ class Mafia {
      */
     public function select()
     {
-        $int = mt_rand(0, count($this->array) - 1);
-        $instance = $this->array[$int];
+        $int = mt_rand(0, count($this->characters) - 1);
+        $instance = $this->characters[$int];
         $this->delete($int);
         return $instance;
     }
@@ -46,7 +46,7 @@ class Mafia {
      */
     public function size(): int
     {
-        return count($this->array);
+        return count($this->characters);
     }
 
 
