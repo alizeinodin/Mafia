@@ -50,11 +50,11 @@ class Mafia {
     }
 
     /**
+     * add players to player array
      *
      * @param array $arr
      *
      * @return array
-     * add players to player array
      */
     public function addPlayer(array $arr): array
     {
