@@ -14,37 +14,6 @@ class Mafia {
     }
 
     /**
-     * @param array $arr
-     *
-     * @return array
-     * add character's to the array
-     */
-    public function addChars(array $arr): array
-    {
-        return $this->roles = $arr;
-    }
-
-    /**
-     * @param $int
-     *
-     * delete element's of array
-     */
-    public function delete($int)
-    {
-        unset($this->roles[$int]);
-    }
-
-    /**
-     * @return int
-     *
-     * return size of array
-     */
-    public function size(): int
-    {
-        return count($this->roles);
-    }
-
-    /**
      * @return array
      *
      * select a random role for player's
