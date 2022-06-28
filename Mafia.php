@@ -47,6 +47,17 @@ class Mafia {
     }
 
     /**
+     * return result array
+     * the result of random selection in program
+     *
+     * @return array
+     */
+    public function getResult(): array
+    {
+        return $this->result;
+    }
+
+    /**
      * number of roles must equal to number of players
      *
      * @return bool
