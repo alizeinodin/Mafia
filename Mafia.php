@@ -3,12 +3,12 @@
 class Mafia {
 
 
-    private $playerClass; // player class
-    private $roleClass; // role class
+    private Player $playerClass; // player class
+    private Role $roleClass; // role class
 
-    private $roles = []; // array of character's of mafia
-    private $players = []; // array of players
-    private $result = []; // result of program
+    private array $roles = []; // array of character's of mafia
+    private array $players = []; // array of players
+    private array $result = []; // result of program
 
     public function __construct(Player $player, Role $role)
     {
