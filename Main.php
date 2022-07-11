@@ -1,12 +1,19 @@
 <?php
+require_once 'Player.php';
 
 class Main
 {
+    protected Player $player;
+
     public function addUser_HTTP()
     {
         $data = $_POST['frm'];
         $array = array_map('trim', explode(',', $data['name']));
-        var_dump($array);
+
+        $this->player = new Player();
+        $this->player->players = $array;
+
+        var_dump($this->player);
     }
 }
 
