@@ -9,7 +9,22 @@
           integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <body class="body container">
-
+<div class="myCollapse">
+    <p>
+        <button class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRule"
+                aria-expanded="false" aria-controls="collapseWidthExample">
+            علی عزیز، لطفا برای نمایش نقشتان کلیک کنید
+        </button>
+    </p>
+    <div style="min-height: 120px;">
+        <div class="collapse collapse-horizontal" id="collapseRule">
+            <div class="card card-body" style="width: 330px;">
+                This is some placeholder content for a horizontal collapse. It's hidden by default and shown when
+                triggered.
+            </div>
+        </div>
+    </div>
+</div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         crossorigin="anonymous"></script>
