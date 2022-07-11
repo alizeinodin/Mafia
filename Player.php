@@ -14,7 +14,7 @@ class Player // singleton for player class
      */
     public function __set($name, array $arr)
     {
-        return $this->players = $arr;
+        return $this->$name = $arr;
     }
 
     /**
@@ -26,6 +26,6 @@ class Player // singleton for player class
      */
     public function __get($name): array
     {
-        return $this->players;
+        return $this->$name;
     }
 }
