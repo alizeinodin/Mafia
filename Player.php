@@ -2,16 +2,17 @@
 
 class Player // singleton for player class
 {
-    private $players = [];
+    private array $players = [];
 
     /**
      * add players to player array
      *
+     * @param $name
      * @param array $arr
      *
      * @return array
      */
-    public function addPlayer(array $arr): array
+    public function __set($name, array $arr)
     {
         return $this->players = $arr;
     }
@@ -19,9 +20,11 @@ class Player // singleton for player class
     /**
      * return players array
      *
+     * @param $name
+     *
      * @return array
      */
-    public function getPlayers(): array
+    public function __get($name): array
     {
         return $this->players;
     }
