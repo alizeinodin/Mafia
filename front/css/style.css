@@ -5,3 +5,10 @@
     margin-left: 15%;
     margin-top: 35%;
 }
+.myForm {
+    margin-top: 20%;
+    display: flex;
+    width: 60%;
+    margin-right: 50%;
+    float: left;
+}
