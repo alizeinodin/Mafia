@@ -12,8 +12,6 @@ class Main
 
         $this->player = new Player();
         $this->player->players = $array;
-
-        var_dump($this->player);
     }
 }
 
