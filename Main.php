@@ -14,7 +14,17 @@ class Main
         $this->player->players = $array;
     }
 
-    public function sendRequest(string $URL, bool $post, array $data, bool $SSL = false)
+    /**
+     * send a json request to a url
+     *
+     * @param string $URL
+     * @param bool $post
+     * @param array $data
+     * @param bool $SSL
+     *
+     * @return bool|string
+     */
+    public function sendRequest(string $URL, bool $post, array $data, bool $SSL = false): bool|string
     {
         $ch = curl_init();
 
