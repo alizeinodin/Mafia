@@ -12,6 +12,16 @@ class Main
 
         $this->player = new Player();
         $this->player->players = $array;
+
+        $citizenNumber = count($array) * 2 / 3;
+
+        $request = $this->sendRequest('/front/html/rules.php',
+            true,
+            [
+                'citizenNumber' => $citizenNumber,
+                'mafiaNumber' => count($array) - $citizenNumber
+            ],
+        );
     }
 
     /**
