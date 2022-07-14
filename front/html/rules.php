@@ -1,3 +1,5 @@
+<?php
+?>
 <!doctype html>
 <html lang="fa" dir="rtl">
 <head>
@@ -18,7 +20,7 @@
         <div class="input-group mb-3">
             <input type="range" class="form-range " id="rangeCitizen" min="1" max="6" dir="ltr"
                    oninput="updateLabel('numberCitizen', 'rangeCitizen')"
-                   value="3">
+                   value="">
             <div class="text-light">
                 <p class="text-right">تعداد شهروندان: <span class="text-info" id="numberCitizen">3</span></p>
             </div>

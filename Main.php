@@ -13,6 +13,29 @@ class Main
         $this->player = new Player();
         $this->player->players = $array;
     }
+
+    public function sendRequest(string $URL, bool $post, array $data, bool $SSL = false)
+    {
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_URL, $URL);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, $SSL);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, $SSL);
+        curl_setopt($ch, CURLOPT_VERBOSE, TRUE);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+        curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+
+        $result = curl_exec($ch);
+
+        if(curl_error($ch))
+        {
+            echo "CURL ERROR: ". curl_error($ch);
+        }
+        curl_close($ch);
+
+        return $result;
+    }
 }
 
 $order = explode('/', $_SERVER['HTTP_REFERER']);
