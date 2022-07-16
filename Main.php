@@ -55,11 +55,16 @@ class Main
 
 $order = explode('/', $_SERVER['HTTP_REFERER']);
 $order = end($order);
+$order = explode('?', $order);
+$order = $order[0];
 
 $main = new Main();
 
 switch ($order) {
     case 'addUser.php':
         $main->addUser_HTTP();
+        break;
+    case 'rules.php':
+
         break;
 }
