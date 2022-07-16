@@ -8,7 +8,7 @@ class Main
     public function addUser_HTTP()
     {
         $data = $_POST['frm'];
-        $array = array_map('trim', explode(',', $data['name']));
+        $array = $this->inputToArray($data['name']);
 
         $this->player = new Player();
         $this->player->players = $array;
@@ -23,6 +23,11 @@ class Main
     {
         $data = $_POST['frm'];
         var_dump($data);
+    }
+
+    private function inputToArray($data): array
+    {
+        return array_map('trim', explode(',', $data));
     }
 
     /**
@@ -49,9 +54,8 @@ class Main
 
         $result = curl_exec($ch);
 
-        if(curl_error($ch))
-        {
-            echo "CURL ERROR: ". curl_error($ch);
+        if (curl_error($ch)) {
+            echo "CURL ERROR: " . curl_error($ch);
         }
         curl_close($ch);
 
