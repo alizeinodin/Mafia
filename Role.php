@@ -57,7 +57,7 @@ class Role
      */
     public function roleMaker(array $citizen, int $citizenNumber, array $mafia, int $mafiaNumber, int $playerNumber)
     {
-        $this->validation(count($citizen), $citizenNumber, count($mafia), $mafiaNumber, $playerNumber);
+        $this->validation($citizen, $citizenNumber, $mafia, $mafiaNumber, $playerNumber);
     }
 
     /**
@@ -65,17 +65,40 @@ class Role
      * citizen array and mafia array members can lower or equal than citizenNumber and mafiaNumber
      * citizen and mafia number must equal to player numbers
      *
-     * @param $citizenIs
-     * @param $citizenExpected
-     * @param $mafiaIs
-     * @param $mafiaExpected
-     * @param $playerNumber
+     * @param array $citizen
+     * @param int $citizenExpected
+     * @param array $mafia
+     * @param int $mafiaExpected
+     * @param int $playerNumber
+     *
+     * @return bool
      */
-    private function validation($citizenIs, $citizenExpected, $mafiaIs, $mafiaExpected, $playerNumber)
+    private function validation(array $citizen, int $citizenExpected, array $mafia, int $mafiaExpected, int $playerNumber): bool
     {
+        // number's of players must equal with role's in the game so
+        // number of mafia and citizen must equal with players but
+        // role's can be lower than expected number because
+        // program will fill with citizen and mafia role
 
+        return ($citizenExpected + $mafiaExpected === $playerNumber)
+            and (count($citizen) <= $citizenExpected)
+            and (count($mafia) <= $mafiaExpected);
+
+        // for strict in game
+        // this code's is very nice :)
+//        $condition2 = true;
+//        $condition3 = true;
+//
+//        // citizen must include a simple citizen at last
+//        if (count($citizen) === $citizenExpected) {
+//            $condition2 = count(array_intersect($citizen, ['شهروند ساده', 'شهروند', 'shahrvand', 'citizen'])) > 0;
+//        }
+//
+//        // mafia must include a simple mafia at last
+//        if (count($mafia) === $mafiaExpected) {
+//            $condition3 = count(array_intersect($mafia, ['مافیا ساده', 'مافیا', 'mafia']));
+//        }
     }
-
 
 
 }
