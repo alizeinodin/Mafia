@@ -2,6 +2,7 @@
 session_start();
 require_once 'Player.php';
 require_once 'Role.php';
+require_once 'Mafia.php';
 
 class Main
 {
@@ -29,10 +30,8 @@ class Main
 
         $citizenNumber = (int) $data['citizenNumber'];
         $mafiaNumber = (int) $data['mafiaNumber'];
-//        $this->role = new Role($citizen, $citizenNumber, $mafia, $mafiaNumber, count($this->player->players));
 
-
-//        var_dump($citizen, $mafia, $citizenNumber, $mafiaNumber);
+        $this->run($citizen, $citizenNumber, $mafia, $mafiaNumber);
     }
 
     private function inputToArray($data): array
@@ -70,6 +69,17 @@ class Main
         curl_close($ch);
 
         return $result;
+    }
+
+    public function run(array $citizen, int $citizenNumber, array $mafia, int $mafiaNumber)
+    {
+        $player = new Player();
+        $player->players = $_SESSION['players'];
+
+        $role = new Role($citizen, $citizenNumber, $mafia, $mafiaNumber, count($_SESSION['players']));
+
+        $mafia = new Mafia($player, $role);
+        $_SESSION['Mafia'] = $mafia->select();
     }
 }
 

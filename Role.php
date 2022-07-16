@@ -69,8 +69,6 @@ class Role
             header("location: /front/html/rules.php?citizen={$citizen}&mafia={$mafia}&error={$error}");
         }
         $this->roles = array_merge($citizen, $mafia);
-        ksort($this->roles);
-        var_dump($this->roles);
     }
 
     /**

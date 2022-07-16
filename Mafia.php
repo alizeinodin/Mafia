@@ -13,7 +13,7 @@ class Mafia {
     public function __construct(Player $player, Role $role)
     {
         $this->playerClass = $player;
-        $this->players = $this->playerClass->getPlayers();
+        $this->players = $this->playerClass->players;
 
         $this->roleClass = $role;
         $this->roles = $this->roleClass->getRoles();
