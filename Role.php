@@ -57,7 +57,14 @@ class Role
      */
     public function roleMaker(array $citizen, int $citizenNumber, array $mafia, int $mafiaNumber, int $playerNumber)
     {
-        $this->validation($citizen, $citizenNumber, $mafia, $mafiaNumber, $playerNumber);
+        if (!$this->validation($citizen, $citizenNumber, $mafia, $mafiaNumber, $playerNumber))
+        {
+            $error = "تعداد تیم مافیا و شهروند با تعداد بازیکنان برابر نیست! لطفا تعداد تیم مافیایی و شهروند را اصلاح کنید";
+            header("location: /front/html/rules.php?citizen={$citizen}&mafia={$mafia}&error={$error}");
+        }
+        $this->roles = array_merge($citizen, $mafia);
+        ksort($this->roles);
+        var_dump($this->roles);
     }
 
     /**
