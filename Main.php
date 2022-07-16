@@ -19,6 +19,12 @@ class Main
         header("location: /front/html/rules.php?citizen={$citizenNumber}&mafia={$mafiaNumber}");
     }
 
+    public function rules_HTTP()
+    {
+        $data = $_POST['frm'];
+        var_dump($data);
+    }
+
     /**
      * send a json request to a url
      *
@@ -65,6 +71,6 @@ switch ($order) {
         $main->addUser_HTTP();
         break;
     case 'rules.php':
-
+        $main->rules_HTTP();
         break;
 }
