@@ -13,15 +13,10 @@ class Main
         $this->player = new Player();
         $this->player->players = $array;
 
-        $citizenNumber = count($array) * 2 / 3;
+        $citizenNumber = ceil(count($array) * 2 / 3);
+        $mafiaNumber = count($array) - $citizenNumber;
 
-        $request = $this->sendRequest('/front/html/rules.php',
-            true,
-            [
-                'citizenNumber' => $citizenNumber,
-                'mafiaNumber' => count($array) - $citizenNumber
-            ],
-        );
+        header("location: /front/html/rules.php?citizen={$citizenNumber}&mafia={$mafiaNumber}");
     }
 
     /**
