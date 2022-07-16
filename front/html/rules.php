@@ -1,5 +1,3 @@
-<?php
-?>
 <!doctype html>
 <html lang="fa" dir="rtl">
 <head>
@@ -11,7 +9,7 @@
           integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <body class="body container">
-<form action="" class="myForm" method="post">
+<form action="../../Main.php" class="myForm" method="post">
     <div class="form-group">
         <input type="text" class="form-control" aria-describedby="testHelp1"
                placeholder="نقش شهروندان را وارد کنید"
@@ -20,9 +18,9 @@
         <div class="input-group mb-3">
             <input type="range" class="form-range " id="rangeCitizen" min="1" max="6" dir="ltr"
                    oninput="updateLabel('numberCitizen', 'rangeCitizen')"
-                   value="">
+                   value="<?php echo $_GET['citizen']; ?>">
             <div class="text-light">
-                <p class="text-right">تعداد شهروندان: <span class="text-info" id="numberCitizen">3</span></p>
+                <p class="text-right">تعداد شهروندان: <span class="text-info" id="numberCitizen"><?php echo $_GET['citizen']; ?></span></p>
             </div>
         </div>
     </div>
@@ -34,9 +32,9 @@
         <div class="input-group mb-3">
             <input type="range" class="form-range" id="rangeMafia" min="1" max="6" dir="ltr"
                    oninput="updateLabel('numberMafia', 'rangeMafia')"
-                   value="3">
+                   value="<?php echo $_GET['mafia']; ?>">
             <div class="text-light">
-                <p class="text-right">تعداد مافیا ها: <span class="text-info" id="numberMafia">3</span></p>
+                <p class="text-right">تعداد مافیا ها: <span class="text-info" id="numberMafia"><?php echo $_GET['mafia']; ?></span></p>
             </div>
         </div>
     </div>
