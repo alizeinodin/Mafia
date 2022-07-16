@@ -6,6 +6,21 @@ class Main
 {
     protected Player $player;
     protected Role $role;
+    protected static $instance = null;
+
+    private function __construct()
+    {
+        // for singleton method
+    }
+
+    public static function getInstance(): ?Main
+    {
+        if (is_null(self::$instance))
+        {
+            self::$instance = new Main();
+        }
+        return self::$instance;
+    }
 
     public function addUser_HTTP()
     {
@@ -81,7 +96,7 @@ $order = end($order);
 $order = explode('?', $order);
 $order = $order[0];
 
-$main = new Main();
+$main = Main::getInstance();
 
 switch ($order) {
     case 'addUser.php':
