@@ -18,9 +18,12 @@
         <div class="input-group mb-3">
             <input type="range" class="form-range " id="rangeCitizen" min="1" max="6" dir="ltr"
                    oninput="updateLabel('numberCitizen', 'rangeCitizen')"
-                   value="<?php echo $_GET['citizen']; ?>">
+                   value="<?php echo $_GET['citizen']; ?>"
+                   name="frm[citizenNumber]">
             <div class="text-light">
-                <p class="text-right">تعداد شهروندان: <span class="text-info" id="numberCitizen"><?php echo $_GET['citizen']; ?></span></p>
+                <p class="text-right">تعداد شهروندان: <span class="text-info"
+                                                            id="numberCitizen"><?php echo $_GET['citizen']; ?></span>
+                </p>
             </div>
         </div>
     </div>
@@ -32,9 +35,11 @@
         <div class="input-group mb-3">
             <input type="range" class="form-range" id="rangeMafia" min="1" max="6" dir="ltr"
                    oninput="updateLabel('numberMafia', 'rangeMafia')"
-                   value="<?php echo $_GET['mafia']; ?>">
+                   value="<?php echo $_GET['mafia']; ?>"
+                   name="frm[mafiaNumber]">
             <div class="text-light">
-                <p class="text-right">تعداد مافیا ها: <span class="text-info" id="numberMafia"><?php echo $_GET['mafia']; ?></span></p>
+                <p class="text-right">تعداد مافیا ها: <span class="text-info"
+                                                            id="numberMafia"><?php echo $_GET['mafia']; ?></span></p>
             </div>
         </div>
     </div>
