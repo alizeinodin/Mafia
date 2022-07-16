@@ -2,7 +2,7 @@
 
 class Role
 {
-    private $roles = []; // array of role's
+    private array $roles = []; // array of role's
 
     /**
      * return roles
