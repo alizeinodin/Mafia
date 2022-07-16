@@ -1,34 +1,18 @@
 <?php
+session_start();
 require_once 'Player.php';
 require_once 'Role.php';
 
 class Main
 {
-    protected Player $player;
     protected Role $role;
-    protected static $instance = null;
-
-    private function __construct()
-    {
-        $this->player = new Player();
-        // for singleton method
-    }
-
-    public static function getInstance(): Main
-    {
-        if (is_null(self::$instance))
-        {
-            self::$instance = new Main();
-        }
-        return self::$instance;
-    }
 
     public function addUser_HTTP()
     {
         $data = $_POST['frm'];
         $array = $this->inputToArray($data['name']);
 
-        $this->player->players = $array;
+        $_SESSION["players"] = $array;
 
         $citizenNumber = ceil(count($array) * 2 / 3);
         $mafiaNumber = count($array) - $citizenNumber;
@@ -45,8 +29,6 @@ class Main
 
         $citizenNumber = (int) $data['citizenNumber'];
         $mafiaNumber = (int) $data['mafiaNumber'];
-
-//        var_dump($this->player->players);
 //        $this->role = new Role($citizen, $citizenNumber, $mafia, $mafiaNumber, count($this->player->players));
 
 
@@ -96,7 +78,7 @@ $order = end($order);
 $order = explode('?', $order);
 $order = $order[0];
 
-$main = Main::getInstance();
+$main = new Main();
 
 switch ($order) {
     case 'addUser.php':
