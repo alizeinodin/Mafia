@@ -4,6 +4,12 @@ class Role
 {
     private array $roles = []; // array of role's
 
+
+    public function __construct(array $citizen, int $citizenNumber, array $mafia, int $mafiaNumber, int $playerNumber)
+    {
+        $this->roleMaker($citizen, $citizenNumber, $mafia, $mafiaNumber, $playerNumber);
+    }
+
     /**
      * return roles
      *
@@ -55,7 +61,7 @@ class Role
      * @param int $mafiaNumber
      * @param int $playerNumber
      */
-    public function roleMaker(array $citizen, int $citizenNumber, array $mafia, int $mafiaNumber, int $playerNumber)
+    private function roleMaker(array $citizen, int $citizenNumber, array $mafia, int $mafiaNumber, int $playerNumber)
     {
         if (!$this->validation($citizen, $citizenNumber, $mafia, $mafiaNumber, $playerNumber))
         {
@@ -106,6 +112,4 @@ class Role
 //            $condition3 = count(array_intersect($mafia, ['مافیا ساده', 'مافیا', 'mafia']));
 //        }
     }
-
-
 }

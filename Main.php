@@ -1,9 +1,11 @@
 <?php
 require_once 'Player.php';
+require_once 'Role.php';
 
 class Main
 {
     protected Player $player;
+    protected Role $role;
 
     public function addUser_HTTP()
     {
@@ -29,8 +31,11 @@ class Main
         $citizenNumber = (int) $data['citizenNumber'];
         $mafiaNumber = (int) $data['mafiaNumber'];
 
+        var_dump($this->player);
+//        $this->role = new Role($citizen, $citizenNumber, $mafia, $mafiaNumber, count($this->player->players));
 
-        var_dump($citizen, $mafia, $citizenNumber, $mafiaNumber);
+
+//        var_dump($citizen, $mafia, $citizenNumber, $mafiaNumber);
     }
 
     private function inputToArray($data): array
