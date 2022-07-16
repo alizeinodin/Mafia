@@ -22,7 +22,15 @@ class Main
     public function rules_HTTP()
     {
         $data = $_POST['frm'];
-        var_dump($data);
+
+        $citizen = $this->inputToArray($data['citizen']);
+        $mafia = $this->inputToArray($data['mafia']);
+
+        $citizenNumber = (int) $data['citizenNumber'];
+        $mafiaNumber = (int) $data['mafiaNumber'];
+
+
+        var_dump($citizen, $mafia, $citizenNumber, $mafiaNumber);
     }
 
     private function inputToArray($data): array
