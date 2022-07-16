@@ -10,10 +10,11 @@ class Main
 
     private function __construct()
     {
+        $this->player = new Player();
         // for singleton method
     }
 
-    public static function getInstance(): ?Main
+    public static function getInstance(): Main
     {
         if (is_null(self::$instance))
         {
@@ -27,7 +28,6 @@ class Main
         $data = $_POST['frm'];
         $array = $this->inputToArray($data['name']);
 
-        $this->player = new Player();
         $this->player->players = $array;
 
         $citizenNumber = ceil(count($array) * 2 / 3);
@@ -46,7 +46,7 @@ class Main
         $citizenNumber = (int) $data['citizenNumber'];
         $mafiaNumber = (int) $data['mafiaNumber'];
 
-        var_dump($this->player);
+//        var_dump($this->player->players);
 //        $this->role = new Role($citizen, $citizenNumber, $mafia, $mafiaNumber, count($this->player->players));
 
 
