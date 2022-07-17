@@ -82,6 +82,12 @@ class Main
         $_SESSION['Mafia'] = $mafia->select();
         $_SESSION['counter'] = 0; // for show data of ith user
     }
+
+    public function show_HTTP()
+    {
+        $_SESSION['counter']++;
+        header('location: /front/html/show.php');
+    }
 }
 
 $order = explode('/', $_SERVER['HTTP_REFERER']);
@@ -97,5 +103,8 @@ switch ($order) {
         break;
     case 'rules.php':
         $main->rules_HTTP();
+        break;
+    case 'show.php':
+        $main->show_HTTP();
         break;
 }

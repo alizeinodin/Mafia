@@ -1,4 +1,8 @@
 <?php
+if (isset($_SESSION['counter']))
+{
+    header('location: /front/html/index.php');
+}
 if ($_SESSION['counter'] >= count($_SESSION['player']))
 {
     header('location: google.com');
