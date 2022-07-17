@@ -28,7 +28,7 @@ if ($_SESSION['counter'] >= count($_SESSION['player']))
                 <h5 class="modal-title" id="ModalLabel">توجّه!</h5>
             </div>
             <div class="modal-body">
-                <p> علی عزیز!
+                <p> <?php echo $_SESSION['player'][$_SESSION['counter']]?> عزیز!
                     </br>
                     </br>
                     نقش بازیکنان مثل یک گنج با ارزش است که کسی جز خود بازیکن نباید از آن مطّلع باشد.
@@ -48,15 +48,13 @@ if ($_SESSION['counter'] >= count($_SESSION['player']))
             <p>
                 <button class="btn btn-light w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRule"
                         aria-expanded="false" aria-controls="collapseWidthExample">
-                    علی عزیز، لطفا برای نمایش نقشتان کلیک کنید
+                    <?php echo $_SESSION['player'][$_SESSION['counter']]?> عزیز، لطفا برای نمایش نقشتان کلیک کنید
                 </button>
             </p>
             <div style="min-height: 120px;">
                 <div class="collapse collapse-horizontal" id="collapseRule">
                     <div class="card card-body" style="width: 520px;">
-                        This is some placeholder content for a horizontal collapse. It's hidden by default and shown
-                        when
-                        triggered.
+                        نقش شما:     <b><?php echo $_SESSION['mafia'][$_SESSION['counter']] ?></b>
                     </div>
                 </div>
             </div>
