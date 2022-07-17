@@ -6,8 +6,6 @@ require_once 'Mafia.php';
 
 class Main
 {
-    protected Role $role;
-
     public function addUser_HTTP()
     {
         $data = $_POST['frm'];
@@ -49,7 +47,7 @@ class Main
      *
      * @return bool|string
      */
-    public function sendRequest(string $URL, bool $post, array $data, bool $SSL = false): bool|string
+    public function sendRequest(string $URL, bool $post, array $data, bool $SSL = false)
     {
         $ch = curl_init();
 
@@ -81,6 +79,7 @@ class Main
         $mafia = new Mafia($player, $role);
         $_SESSION['Mafia'] = $mafia->select();
         $_SESSION['counter'] = 0; // for show data of ith user
+        $_SESSION['status'] = array_fill_keys($player->players, true);
 
         header('location: /front/html/show.php');
     }

@@ -20,22 +20,18 @@
         </tr>
         </thead>
         <tbody>
+        <?php for ($i = 0; $i < $_SESSION['counter']; $i++):?>
         <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
+            <th scope="row"><?php echo $i; ?></th>
+            <td><?php echo $_SESSION['players'][$i]?></td>
+            <td><?php echo $_SESSION['Mafia'][$_SESSION['players'][$i]]?></td>
             <td><a href="#">
                 <button class="btn btn-danger btn-sm">
-                    زنده
+                   <?php echo $_SESSION['status'][$_SESSION['players'][$i]]? "زنده": "مرده" ?>
                 </button>
             </a></td>
         </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>مرده</td>
-        </tr>
+        <?php endfor;?>
         </tbody>
     </table>
 </div>
