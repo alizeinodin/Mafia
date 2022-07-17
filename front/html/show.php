@@ -1,10 +1,9 @@
 <?php
-if (isset($_SESSION['counter']))
-{
+session_start();
+if (!isset($_SESSION['counter'])) {
     header('location: /front/html/index.php');
 }
-if ($_SESSION['counter'] >= count($_SESSION['player']))
-{
+if ($_SESSION['counter'] >= count($_SESSION['players'])) {
     header('location: google.com');
 }
 ?>
@@ -28,11 +27,12 @@ if ($_SESSION['counter'] >= count($_SESSION['player']))
                 <h5 class="modal-title" id="ModalLabel">توجّه!</h5>
             </div>
             <div class="modal-body">
-                <p> <?php echo $_SESSION['player'][$_SESSION['counter']]?> عزیز!
+                <p> <?php echo $_SESSION['players'][$_SESSION['counter']] ?> عزیز!
                     </br>
                     </br>
                     نقش بازیکنان مثل یک گنج با ارزش است که کسی جز خود بازیکن نباید از آن مطّلع باشد.
-                    ابتدا مطمئن شوید کسی جز شما به صفحه نگاه نمی کند سپس روی دکمه "نمایش نقش" کلیک کنید و پس از اینکه از آن مطلع شدید روی دکمه "فهمیدم" کلیک کنید.
+                    ابتدا مطمئن شوید کسی جز شما به صفحه نگاه نمی کند سپس روی دکمه "نمایش نقش" کلیک کنید و پس از اینکه از
+                    آن مطلع شدید روی دکمه "فهمیدم" کلیک کنید.
                 </p>
             </div>
             <div class="modal-footer">
@@ -46,21 +46,22 @@ if ($_SESSION['counter'] >= count($_SESSION['player']))
     <form action="../../Main.php" method="post">
         <div class="form-group">
             <p>
-                <button class="btn btn-light w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRule"
+                <button class="btn btn-light w-100" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseRule"
                         aria-expanded="false" aria-controls="collapseWidthExample">
-                    <?php echo $_SESSION['player'][$_SESSION['counter']]?> عزیز، لطفا برای نمایش نقشتان کلیک کنید
+                    <?php echo $_SESSION['players'][$_SESSION['counter']] ?> عزیز، لطفا برای نمایش نقشتان کلیک کنید
                 </button>
             </p>
             <div style="min-height: 120px;">
                 <div class="collapse collapse-horizontal" id="collapseRule">
-                    <div class="card card-body" style="width: 520px;">
-                        نقش شما:     <b><?php echo $_SESSION['mafia'][$_SESSION['counter']] ?></b>
-                    </div>
+                    <div class="card card-body" style="width: 520px;"><p>
+                            نقش شما: <b><?php echo $_SESSION['Mafia'][$_SESSION['players'][$_SESSION['counter']]] ?></b>
+                        </p></div>
                 </div>
             </div>
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-outline-light w-100"> فهمیدم! </button>
+            <button type="submit" class="btn btn-outline-light w-100"> فهمیدم!</button>
         </div>
     </form>
 </div>
@@ -70,7 +71,7 @@ if ($_SESSION['counter'] >= count($_SESSION['player']))
         crossorigin="anonymous"></script>
 <script>
     $(document).ready(function () {
-       $("#myModal").modal('show');
+        $("#myModal").modal('show');
     });
 </script>
 </body>
