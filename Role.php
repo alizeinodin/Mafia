@@ -22,13 +22,19 @@ class Role
 
     /**
      * @param array $arr
+     * @param int $counter
+     * @param bool $citizen // if this function called for citizen group, true
      *
      * @return array
      * add role's to the array
      */
-    public function addChars(array $arr): array
+    public function fixRoles(array $arr, int $counter, bool $citizen): array
     {
-        return $this->roles = $arr;
+        while(count($arr) != $counter)
+        {
+            $arr[] = $citizen ? 'شهروند ساده': 'مافیا ساده';
+        }
+        return $arr;
     }
 
     /**
@@ -68,7 +74,10 @@ class Role
             $error = "تعداد تیم مافیا و شهروند با تعداد بازیکنان برابر نیست! لطفا تعداد تیم مافیایی و شهروند را اصلاح کنید";
             header("location: /front/html/rules.php?citizen={$citizen}&mafia={$mafia}&error={$error}");
         }
-        $this->roles = array_merge($citizen, $mafia);
+        $this->roles = array_merge(
+            $this->fixRoles($citizen, $citizenNumber, true),
+            $this->fixRoles($mafia, $mafiaNumber, false)
+        );
     }
 
     /**
