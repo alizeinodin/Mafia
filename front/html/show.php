@@ -1,3 +1,9 @@
+<?php
+if ($_SESSION['counter'] >= count($_SESSION['player']))
+{
+    header('location: google.com');
+}
+?>
 <!doctype html>
 <html lang="fa" dir="rtl">
 <head>
@@ -33,7 +39,7 @@
 </div>
 
 <div class="myCollapse">
-    <form action="">
+    <form action="../../Main.php" method="post">
         <div class="form-group">
             <p>
                 <button class="btn btn-light w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRule"
