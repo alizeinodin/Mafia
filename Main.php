@@ -80,6 +80,7 @@ class Main
 
         $mafia = new Mafia($player, $role);
         $_SESSION['Mafia'] = $mafia->select();
+        $_SESSION['counter'] = 0; // for show data of ith user
     }
 }
 
