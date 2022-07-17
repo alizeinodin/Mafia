@@ -26,7 +26,10 @@ class Role
      * @param bool $citizen // if this function called for citizen group, true
      *
      * @return array
-     * add role's to the array
+     * fix role's,
+     * if numbers of mafia is greater than size of roles of mafia,
+     * simple mafia will add to roles of mafia until equal to mafia number
+     * and citizen is also similar to the mafia.
      */
     public function fixRoles(array $arr, int $counter, bool $citizen): array
     {
