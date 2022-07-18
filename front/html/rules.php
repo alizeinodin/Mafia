@@ -16,7 +16,8 @@
                name="frm[citizen]">
         <div id="textHelp1" class="form-text text-light">نقش ها را با کاما (,) از یکدیگر جدا کنید</div>
         <div class="input-group mb-3">
-            <input type="range" class="form-range " id="rangeCitizen" min="1" max="6" dir="ltr"
+            <input type="range" class="form-range " id="rangeCitizen" min="1"
+                   max="<?php echo $_GET['citizen'] + $_GET['mafia']; ?>" dir="ltr"
                    oninput="updateLabel('numberCitizen', 'rangeCitizen')"
                    value="<?php echo $_GET['citizen']; ?>"
                    name="frm[citizenNumber]">
@@ -33,7 +34,7 @@
                name="frm[mafia]">
         <div id="textHelp2" class="form-text text-light">اسامی را با کاما (,) از یکدیگر جدا کنید</div>
         <div class="input-group mb-3">
-            <input type="range" class="form-range" id="rangeMafia" min="1" max="6" dir="ltr"
+            <input type="range" class="form-range" id="rangeMafia" min="1" max="<?php echo floor($_GET['citizen'] + $_GET['mafia']); ?>" dir="ltr"
                    oninput="updateLabel('numberMafia', 'rangeMafia')"
                    value="<?php echo $_GET['mafia']; ?>"
                    name="frm[mafiaNumber]">
