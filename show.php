@@ -51,7 +51,7 @@ if (!isset($_SESSION['counter'])) {
                 </p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="window.location.replace('/front/html/result.php')">تایید</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="window.location.replace('/result.php')">تایید</button>
             </div>
         </div>
     </div>
