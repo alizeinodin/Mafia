@@ -10,7 +10,7 @@ if (!isset($_SESSION['counter'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>مافیا</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
@@ -58,7 +58,7 @@ if (!isset($_SESSION['counter'])) {
 </div>
 
 <div class="myCollapse">
-    <form action="../../Main.php" method="post">
+    <form action="backend/Main.php" method="post">
         <div class="form-group">
             <p>
                 <button class="btn btn-light w-100" type="button" data-bs-toggle="collapse"
