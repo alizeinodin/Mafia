@@ -1,3 +1,12 @@
+<?php
+    session_start();
+
+    if (isset($_GET['id']))
+    {
+        $i = $_GET['id'];
+        $_SESSION['status'][$_SESSION['players'][$i]] = !$_SESSION['status'][$_SESSION['players'][$i]];
+    }
+?>
 <!doctype html>
 <html lang="fa" dir="rtl">
 <head>
@@ -25,8 +34,8 @@
             <th scope="row"><?php echo $i; ?></th>
             <td><?php echo $_SESSION['players'][$i]?></td>
             <td><?php echo $_SESSION['Mafia'][$_SESSION['players'][$i]]?></td>
-            <td><a href="#">
-                <button class="btn btn-danger btn-sm">
+            <td><a href="?id=<?php echo $i; ?>">
+                <button class="btn btn-<?php echo $_SESSION['status'][$_SESSION['players'][$i]]? 'success': 'danger'; ?> btn-sm">
                    <?php echo $_SESSION['status'][$_SESSION['players'][$i]]? "زنده": "مرده" ?>
                 </button>
             </a></td>
