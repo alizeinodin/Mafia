@@ -16,7 +16,7 @@ class Main
         $citizenNumber = ceil(count($array) * 2 / 3);
         $mafiaNumber = count($array) - $citizenNumber;
 
-        header("location: /front/html/rules.php?citizen={$citizenNumber}&mafia={$mafiaNumber}");
+        header("location: /rules.php?citizen={$citizenNumber}&mafia={$mafiaNumber}");
     }
 
     public function rules_HTTP()
@@ -34,6 +34,10 @@ class Main
 
     private function inputToArray($data): array
     {
+        if (strpos($data, '،') !== false)
+        {
+            return array_map('trim', explode('،', $data));
+        }
         return array_map('trim', explode(',', $data));
     }
 
