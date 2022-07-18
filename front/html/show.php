@@ -3,9 +3,6 @@ session_start();
 if (!isset($_SESSION['counter'])) {
     header('location: /front/html/index.php');
 }
-if ($_SESSION['counter'] >= count($_SESSION['players'])) {
-    header('location: google.com');
-}
 ?>
 <!doctype html>
 <html lang="fa" dir="rtl">
@@ -42,6 +39,24 @@ if ($_SESSION['counter'] >= count($_SESSION['players'])) {
     </div>
 </div>
 
+<div class="modal fade" id="myModalAdmin" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalLabel">گاد بازی!</h5>
+            </div>
+            <div class="modal-body">
+                <p>
+                    گادبازی، اگه صحت دیدن نقش ها رو قبول داری روی دکمه تایید کلیک کن تا صفحه نتایج رو ببینی.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="window.location.replace('/front/html/result.php')">تایید</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="myCollapse">
     <form action="../../Main.php" method="post">
         <div class="form-group">
@@ -69,10 +84,22 @@ if ($_SESSION['counter'] >= count($_SESSION['players'])) {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         crossorigin="anonymous"></script>
-<script>
-    $(document).ready(function () {
-        $("#myModal").modal('show');
-    });
-</script>
+<?php if ($_SESSION['counter'] < count($_SESSION['players'])) { ?>
+    <script>
+        $(document).ready(function () {
+            $("#myModal").modal('show');
+        });
+    </script>
+<?php
+} else {
+?>
+    <script>
+        $(document).ready(function () {
+            $("#myModalAdmin").modal('show');
+        });
+    </script>
+    <?php
+}
+?>
 </body>
 </html>
