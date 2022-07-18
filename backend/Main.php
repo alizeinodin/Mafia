@@ -85,13 +85,13 @@ class Main
         $_SESSION['counter'] = 0; // for show data of ith user
         $_SESSION['status'] = array_fill_keys($player->players, true);
 
-        header('location: /front/html/show.php');
+        header('location: /show.php');
     }
 
     public function show_HTTP()
     {
         $_SESSION['counter']++;
-        header('location: /front/html/show.php');
+        header('location: /show.php');
     }
 }
 
