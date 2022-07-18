@@ -1,5 +1,13 @@
+@font-face {
+    font-family: Vazir;
+    src: url('../font/Vazir.ttf') format('truetype'),
+    url('../font/Vazir.woff') format('woff'),
+    url('../font/Vazir.woff2') format('woff2');
+    url('../font/Vazir.eot') format('eot');
+}
 .body{
     background-image: url("../image/265461.jpg");
+    font-family: Vazir;
 }
 .button {
     margin-left: 10%;
