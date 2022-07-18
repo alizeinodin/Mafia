@@ -69,7 +69,7 @@ if (!isset($_SESSION['counter'])) {
             </p>
             <div style="min-height: 120px;">
                 <div class="collapse collapse-horizontal" id="collapseRule">
-                    <div class="card card-body" style="width: 520px;"><p>
+                    <div class="c-body card card-body"><p>
                             نقش شما: <b><?php echo $_SESSION['Mafia'][$_SESSION['players'][$_SESSION['counter']]] ?></b>
                         </p></div>
                 </div>

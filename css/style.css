@@ -3,27 +3,60 @@
     src: url('../font/Vazir.ttf') format('truetype'),
     url('../font/Vazir.woff') format('woff'),
     url('../font/Vazir.woff2') format('woff2');
-    url('../font/Vazir.eot') format('eot');
+url('../font/Vazir.eot') format('eot');
 }
-.body{
+
+.body {
     background-image: url("../image/265461.jpg");
     font-family: Vazir, serif;
 }
-.button {
-    margin-left: 10%;
-    margin-top: 35%;
+
+@media screen and (min-width: 920px) {
+    .myForm {
+        margin-top: 20%;
+        display: block;
+        max-width: 65%;
+        margin-right: 40%;
+    }
+
+    .tableDiv {
+        margin-top: 5%;
+        margin-right: 50%;
+    }
+
+    .myCollapse {
+        margin-top: 20%;
+        margin-right: 60%;
+    }
+    .button {
+        margin-left: 10%;
+        margin-top: 35%;
+    }
+
 }
-.myForm {
-    margin-top: 20%;
-    display: block;
-    max-width: 65%;
-    margin-right: 40%;
+.c-body {
+    width: 34vw;
 }
-.tableDiv {
-    margin-top: 5%;
-    margin-right: 50%;
-}
-.myCollapse {
-    margin-top: 20%;
-    margin-right: 60%;
+
+@media screen and (max-width: 920px){
+    .table{
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 30px;
+    }
+    .btn-index {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center;
+    }
+    .button {
+        text-align: center;
+        margin-top: 50%;
+    }
+    .myForm {
+        margin-top: 20%;
+    }
+    .c-body {
+        width: 95vw;
+    }
 }
